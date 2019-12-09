@@ -1,3 +1,8 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift File.dirname(__FILE__) + "/../lib"
+
+require 'rubygems'
 require 'rest-client'
 
 class Bing
@@ -15,7 +20,9 @@ class Bing
   def format(search)
     search.split(' ').join('+')
   end
+
   private
+
   def input 
     puts 'Enter the search term'
     format(gets.chomp)
